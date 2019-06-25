@@ -13,6 +13,8 @@
 		232F8BFF22C250B300C07AB3 /* ToDo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 232F8BFD22C250B300C07AB3 /* ToDo.xcdatamodeld */; };
 		232F8C0122C250B500C07AB3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 232F8C0022C250B500C07AB3 /* Assets.xcassets */; };
 		232F8C0422C250B500C07AB3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 232F8C0222C250B500C07AB3 /* LaunchScreen.storyboard */; };
+		232F8C0C22C25D2500C07AB3 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232F8C0B22C25D2500C07AB3 /* TableViewController.swift */; };
+		232F8C0E22C282CC00C07AB3 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232F8C0D22C282CC00C07AB3 /* Category.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		232F8C0022C250B500C07AB3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		232F8C0322C250B500C07AB3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		232F8C0522C250B500C07AB3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		232F8C0B22C25D2500C07AB3 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		232F8C0D22C282CC00C07AB3 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,11 +62,13 @@
 			children = (
 				232F8BF622C250B300C07AB3 /* AppDelegate.swift */,
 				232F8BF822C250B300C07AB3 /* ViewController.swift */,
+				232F8C0B22C25D2500C07AB3 /* TableViewController.swift */,
 				232F8BFA22C250B300C07AB3 /* Main.storyboard */,
 				232F8C0022C250B500C07AB3 /* Assets.xcassets */,
 				232F8C0222C250B500C07AB3 /* LaunchScreen.storyboard */,
 				232F8C0522C250B500C07AB3 /* Info.plist */,
 				232F8BFD22C250B300C07AB3 /* ToDo.xcdatamodeld */,
+				232F8C0D22C282CC00C07AB3 /* Category.swift */,
 			);
 			path = ToDo;
 			sourceTree = "<group>";
@@ -139,8 +145,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				232F8BF922C250B300C07AB3 /* ViewController.swift in Sources */,
+				232F8C0E22C282CC00C07AB3 /* Category.swift in Sources */,
 				232F8BFF22C250B300C07AB3 /* ToDo.xcdatamodeld in Sources */,
 				232F8BF722C250B300C07AB3 /* AppDelegate.swift in Sources */,
+				232F8C0C22C25D2500C07AB3 /* TableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

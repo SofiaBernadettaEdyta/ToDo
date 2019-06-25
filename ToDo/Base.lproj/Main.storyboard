@@ -21,6 +21,32 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lJP-De-gWR">
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ToDo" textLabel="VDa-au-TdG" detailTextLabel="iaD-EU-F28" style="IBUITableViewCellStyleValue2" id="ahI-oP-UV8">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ahI-oP-UV8" id="lDW-yi-mpy">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="VDa-au-TdG">
+                                                    <rect key="frame" x="20" y="14" width="91" height="16"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="iaD-EU-F28">
+                                                    <rect key="frame" x="117" y="14" width="35" height="16"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -40,6 +66,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="toDoTableView" destination="lJP-De-gWR" id="Yo6-re-E9G"/>
                         <segue destination="QPO-OH-keY" kind="presentation" identifier="add" id="8Lx-NC-Yts"/>
                     </connections>
                 </viewController>
@@ -50,8 +77,7 @@
         <!--Add new ToDo-->
         <scene sceneID="aSK-nl-yby">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="YyY-xM-tkh" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tableViewController id="pYb-0R-yrH" sceneMemberID="viewController">
+                <tableViewController id="pYb-0R-yrH" customClass="TableViewController" customModule="ToDo" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="4qx-n7-rDq">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -134,17 +160,31 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Add new ToDo" id="bC7-xP-Ke7">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="v5n-6T-Dwh"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="YRO-fN-Ukv"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="v5n-6T-Dwh">
+                            <connections>
+                                <action selector="cancelButtonPressed:" destination="pYb-0R-yrH" id="k78-QF-z3Q"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="YRO-fN-Ukv">
+                            <connections>
+                                <action selector="doneButtonPressed:" destination="pYb-0R-yrH" id="grO-Wo-zMr"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="addTableView" destination="4qx-n7-rDq" id="Qhe-c8-Hk0"/>
+                        <outlet property="categoryTextField" destination="Mry-6j-Yep" id="wXP-E9-AhT"/>
+                        <outlet property="dateTextField" destination="4p9-Pf-mBn" id="8kf-ZX-koH"/>
+                        <outlet property="nameTextField" destination="TMQ-re-QHR" id="3ff-eC-d8M"/>
+                    </connections>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YyY-xM-tkh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1883" y="824"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="vb7-57-P8O">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4qM-tz-yEP" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="teb-dh-Rc2" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="0ex-Ec-rYJ">
@@ -156,13 +196,13 @@
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="WS0-C6-2Hv"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4qM-tz-yEP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="164" y="138"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="tpg-dU-S5x">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="flU-Ir-6bD" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="QPO-OH-keY" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="mfr-wO-iQq">
@@ -174,6 +214,7 @@
                         <segue destination="pYb-0R-yrH" kind="relationship" relationship="rootViewController" id="72A-Lm-lj0"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="flU-Ir-6bD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1048" y="824"/>
         </scene>

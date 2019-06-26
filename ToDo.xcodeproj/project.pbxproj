@@ -8,26 +8,30 @@
 
 /* Begin PBXBuildFile section */
 		232F8BF722C250B300C07AB3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232F8BF622C250B300C07AB3 /* AppDelegate.swift */; };
-		232F8BF922C250B300C07AB3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232F8BF822C250B300C07AB3 /* ViewController.swift */; };
+		232F8BF922C250B300C07AB3 /* ToDoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232F8BF822C250B300C07AB3 /* ToDoViewController.swift */; };
 		232F8BFC22C250B300C07AB3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 232F8BFA22C250B300C07AB3 /* Main.storyboard */; };
 		232F8BFF22C250B300C07AB3 /* ToDo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 232F8BFD22C250B300C07AB3 /* ToDo.xcdatamodeld */; };
 		232F8C0122C250B500C07AB3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 232F8C0022C250B500C07AB3 /* Assets.xcassets */; };
 		232F8C0422C250B500C07AB3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 232F8C0222C250B500C07AB3 /* LaunchScreen.storyboard */; };
-		232F8C0C22C25D2500C07AB3 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232F8C0B22C25D2500C07AB3 /* TableViewController.swift */; };
+		232F8C0C22C25D2500C07AB3 /* AddTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232F8C0B22C25D2500C07AB3 /* AddTableViewController.swift */; };
 		232F8C0E22C282CC00C07AB3 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232F8C0D22C282CC00C07AB3 /* Category.swift */; };
+		232F8C1122C2C66400C07AB3 /* ToDoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232F8C0F22C2C66400C07AB3 /* ToDoTableViewCell.swift */; };
+		232F8C1222C2C66400C07AB3 /* ToDoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 232F8C1022C2C66400C07AB3 /* ToDoTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		232F8BF322C250B200C07AB3 /* ToDo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		232F8BF622C250B300C07AB3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		232F8BF822C250B300C07AB3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		232F8BF822C250B300C07AB3 /* ToDoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoViewController.swift; sourceTree = "<group>"; };
 		232F8BFB22C250B300C07AB3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		232F8BFE22C250B300C07AB3 /* ToDo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ToDo.xcdatamodel; sourceTree = "<group>"; };
 		232F8C0022C250B500C07AB3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		232F8C0322C250B500C07AB3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		232F8C0522C250B500C07AB3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		232F8C0B22C25D2500C07AB3 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		232F8C0B22C25D2500C07AB3 /* AddTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTableViewController.swift; sourceTree = "<group>"; };
 		232F8C0D22C282CC00C07AB3 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		232F8C0F22C2C66400C07AB3 /* ToDoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoTableViewCell.swift; sourceTree = "<group>"; };
+		232F8C1022C2C66400C07AB3 /* ToDoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ToDoTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,8 +65,10 @@
 			isa = PBXGroup;
 			children = (
 				232F8BF622C250B300C07AB3 /* AppDelegate.swift */,
-				232F8BF822C250B300C07AB3 /* ViewController.swift */,
-				232F8C0B22C25D2500C07AB3 /* TableViewController.swift */,
+				232F8BF822C250B300C07AB3 /* ToDoViewController.swift */,
+				232F8C0F22C2C66400C07AB3 /* ToDoTableViewCell.swift */,
+				232F8C1022C2C66400C07AB3 /* ToDoTableViewCell.xib */,
+				232F8C0B22C25D2500C07AB3 /* AddTableViewController.swift */,
 				232F8BFA22C250B300C07AB3 /* Main.storyboard */,
 				232F8C0022C250B500C07AB3 /* Assets.xcassets */,
 				232F8C0222C250B500C07AB3 /* LaunchScreen.storyboard */,
@@ -134,6 +140,7 @@
 				232F8C0422C250B500C07AB3 /* LaunchScreen.storyboard in Resources */,
 				232F8C0122C250B500C07AB3 /* Assets.xcassets in Resources */,
 				232F8BFC22C250B300C07AB3 /* Main.storyboard in Resources */,
+				232F8C1222C2C66400C07AB3 /* ToDoTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -144,11 +151,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				232F8BF922C250B300C07AB3 /* ViewController.swift in Sources */,
+				232F8BF922C250B300C07AB3 /* ToDoViewController.swift in Sources */,
 				232F8C0E22C282CC00C07AB3 /* Category.swift in Sources */,
 				232F8BFF22C250B300C07AB3 /* ToDo.xcdatamodeld in Sources */,
+				232F8C1122C2C66400C07AB3 /* ToDoTableViewCell.swift in Sources */,
 				232F8BF722C250B300C07AB3 /* AppDelegate.swift in Sources */,
-				232F8C0C22C25D2500C07AB3 /* TableViewController.swift in Sources */,
+				232F8C0C22C25D2500C07AB3 /* AddTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

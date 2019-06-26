@@ -13,48 +13,44 @@
         <!--ToDo-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ToDo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ToDoViewController" customModule="ToDo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lJP-De-gWR">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lJP-De-gWR">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ToDo" textLabel="VDa-au-TdG" detailTextLabel="iaD-EU-F28" style="IBUITableViewCellStyleValue2" id="ahI-oP-UV8">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ToDo" id="ahI-oP-UV8" customClass="ToDoTableViewCell" customModule="ToDo" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ahI-oP-UV8" id="lDW-yi-mpy">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="VDa-au-TdG">
-                                                    <rect key="frame" x="20" y="14" width="91" height="16"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="iaD-EU-F28">
-                                                    <rect key="frame" x="117" y="14" width="35" height="16"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="There is no tasks, add new one!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xRh-UQ-18q">
+                                <rect key="frame" x="84.5" y="426" width="245" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="245" id="Dqy-UM-JjY"/>
+                                    <constraint firstAttribute="height" constant="44" id="uih-vr-Aai"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="bottomMargin" secondItem="lJP-De-gWR" secondAttribute="bottom" id="Oao-ua-Bjx"/>
-                            <constraint firstItem="lJP-De-gWR" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="aYa-rs-PFF"/>
-                            <constraint firstItem="lJP-De-gWR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="lXY-sM-0Lm"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="lJP-De-gWR" secondAttribute="trailing" id="yzP-67-9JN"/>
+                            <constraint firstItem="xRh-UQ-18q" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="0Pj-Nc-nN3"/>
+                            <constraint firstItem="xRh-UQ-18q" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="IIN-qy-fGJ"/>
+                            <constraint firstAttribute="bottom" secondItem="lJP-De-gWR" secondAttribute="bottom" id="Oao-ua-Bjx"/>
+                            <constraint firstItem="lJP-De-gWR" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="aYa-rs-PFF"/>
+                            <constraint firstItem="lJP-De-gWR" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="lXY-sM-0Lm"/>
+                            <constraint firstAttribute="trailing" secondItem="lJP-De-gWR" secondAttribute="trailing" id="yzP-67-9JN"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -66,6 +62,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="lackOfTasksLabel" destination="xRh-UQ-18q" id="Bbt-v2-aVd"/>
                         <outlet property="toDoTableView" destination="lJP-De-gWR" id="Yo6-re-E9G"/>
                         <segue destination="QPO-OH-keY" kind="presentation" identifier="add" id="8Lx-NC-Yts"/>
                     </connections>
@@ -77,8 +74,8 @@
         <!--Add new ToDo-->
         <scene sceneID="aSK-nl-yby">
             <objects>
-                <tableViewController id="pYb-0R-yrH" customClass="TableViewController" customModule="ToDo" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="4qx-n7-rDq">
+                <tableViewController id="pYb-0R-yrH" customClass="AddTableViewController" customModule="ToDo" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="4qx-n7-rDq">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -172,10 +169,10 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="addTableView" destination="4qx-n7-rDq" id="Qhe-c8-Hk0"/>
                         <outlet property="categoryTextField" destination="Mry-6j-Yep" id="wXP-E9-AhT"/>
                         <outlet property="dateTextField" destination="4p9-Pf-mBn" id="8kf-ZX-koH"/>
                         <outlet property="nameTextField" destination="TMQ-re-QHR" id="3ff-eC-d8M"/>
+                        <outlet property="tableView" destination="4qx-n7-rDq" id="Qhe-c8-Hk0"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YyY-xM-tkh" userLabel="First Responder" sceneMemberID="firstResponder"/>

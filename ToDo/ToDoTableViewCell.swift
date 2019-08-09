@@ -13,7 +13,8 @@ class ToDoTableViewCell: UITableViewCell {
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var dateLabel: UILabel!
     @IBOutlet var categoryLabel: UILabel!
-    
+    @IBOutlet var doneButton: UIButton!
+    var toggleDone: () -> Void = {}
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -24,6 +25,10 @@ class ToDoTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    @IBAction func doneButtonTapped(_ sender: Any) {
+        toggleDone()
     }
     
 }

@@ -25,10 +25,19 @@ class ToDoViewController: UIViewController {
         
         NotificationCenter.default.addObserver(self, selector: #selector(contextObjectsDidChange(_:)), name: Notification.Name.NSManagedObjectContextObjectsDidChange, object: nil)
         
+        fetchData()
         tableViewSet()
         
-        fetchData()
         
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        let context = self.appDelegate.persistentContainer.viewContext
+        do {
+            try context.save()
+        } catch {
+            // 
+        }
     }
     
     func tableViewSet() {
@@ -79,6 +88,15 @@ class ToDoViewController: UIViewController {
         
         present(alert, animated: true, completion: nil)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "detail" {
+            let navController = segue.destination as! UINavigationController
+            let targetController = navController.topViewController as! DetailTableViewController
+            let row = (sender as! IndexPath).row
+            targetController.toDoey = toDoes[row]
+        }
+    }
 }
 
 extension ToDoViewController: UITableViewDelegate, UITableViewDataSource {
@@ -91,6 +109,12 @@ extension ToDoViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! ToDoTableViewCell
         cell.nameLabel.text = toDoes[indexPath.row].name
         cell.categoryLabel.text = toDoes[indexPath.row].category
+        cell.toggleDone = { [weak self] in
+            self?.toDoes[indexPath.row].isDone.toggle()
+            tableView.reloadRows(at: [indexPath], with: .automatic)
+        }
+        let imageName = toDoes[indexPath.row].isDone ? "done" : "notDone"
+        cell.doneButton.setImage(UIImage(named: imageName), for: .normal) 
         let color = colors[toDoes[indexPath.row].category!]
         cell.backgroundColor = color
         if let date = toDoes[indexPath.row].date {
@@ -104,4 +128,10 @@ extension ToDoViewController: UITableViewDelegate, UITableViewDataSource {
             displayAlert(for: indexPath)
         }
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "detail", sender: indexPath)
+    }
+    
+    
 }

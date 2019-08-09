@@ -9,11 +9,12 @@
 import UIKit
 import CoreData
 
-class AddTableViewController: UITableViewController {
+class DetailTableViewController: UITableViewController {
 
     @IBOutlet var nameTextField: UITextField!
     @IBOutlet var dateTextField: UITextField!
     @IBOutlet var categoryTextField: UITextField!
+    var toDoey: ToDo!
     let categories = Category.allCases
     
     private var categoryPicker: UIPickerView?
@@ -27,11 +28,22 @@ class AddTableViewController: UITableViewController {
         
         tableView.tableFooterView = UIView()
         
+        setUI()
+        
         datePickerViewSetUp()
         
         addTapGesture()
         
         categoryPickerViewSetUp()
+        
+    }
+    
+    func setUI() {
+        guard let toDoey = toDoey else { return }
+        nameTextField.text = toDoey.name
+        date = toDoey.date
+        dateTextField.text = DateFormatter.localizedString(from: date, dateStyle: .medium, timeStyle: .none)
+        categoryTextField.text = toDoey.category
         
     }
     
@@ -91,10 +103,18 @@ class AddTableViewController: UITableViewController {
     
     func saveData(name: String, date: Date, category: String) {
         let context = self.appDelegate.persistentContainer.viewContext
-        let entity = ToDo(context: context)
-        entity.name = name
-        entity.date = date
-        entity.category = category
+        if let toDoey = toDoey {
+            toDoey.name = name
+            toDoey.date = date
+            toDoey.category = category
+        } else {
+            let entity = ToDo(context: context)
+            entity.name = name
+            entity.date = date
+            entity.category = category
+            entity.isDone = false
+        }
+        
         
         do {
             try context.save()
@@ -123,7 +143,7 @@ class AddTableViewController: UITableViewController {
     
 }
 
-extension AddTableViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+extension DetailTableViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
